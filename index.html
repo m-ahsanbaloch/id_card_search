@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Entries</title>
+</head>
+<body>
+  <form id="studentForm">
+    <input type="text" id="name" placeholder="Enter Name" required><br>
+    <input type="text" id="fatherName" placeholder="Enter Father Name" required><br>
+    <input type="number" id="rollNumber" placeholder="Enter Roll Number" required><br>
+    <input type="email" id="email" placeholder="Enter Email" required><br>
+    <button type="button" id="addStudent">Add Student</button>
+  </form>
+  <div id="studentsList">
+    <h2>Student List</h2>
+  </div>
+
+  <script>
+    const students = []; // Array to hold all student objects
+
+    document.getElementById('addStudent').addEventListener('click', function () {
+      // Get input values
+      const name = document.getElementById('name').value.trim();
+      const fatherName = document.getElementById('fatherName').value.trim();
+      const rollNumber = document.getElementById('rollNumber').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      // Validate input
+      if (!name || !fatherName || !rollNumber || !email) {
+        alert('Please fill out all fields!');
+        return;
+      }
+
+      // Create a student object
+      const student = {
+        name: name,
+        fatherName: fatherName,
+        rollNumber: rollNumber,
+        email: email,
+      };
+
+      // Add the student object to the array
+      students.push(student);
+
+      // Reset the form
+      document.getElementById('studentForm').reset();
+
+      // Display the updated list of students
+      displayStudents();
+    });
+
+    function displayStudents() {
+      const studentsList = document.getElementById('studentsList');
+      studentsList.innerHTML = '<h2>Student List</h2>'; // Clear the current list
+
+      for (const index in students) {
+        const student = students[index];
+        studentsList.innerHTML += `
+          <div>
+            <h3>Student ${student.rollNumber}</h3>
+            <p>Name: ${student.name}</p>
+            <p>Father Name: ${student.fatherName}</p>
+            <p>Roll Number: ${student.rollNumber}</p>
+            <p>Email: ${student.email}</p>
+          </div>
+          <hr>
+        `;
+      }
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userName" placeholder="User Name">
+    <input type="text"id="email" placeholder="email">
+    <input type="text"id="rollNumber" placeholder="rollNumber">
+    <input type="text"id="father" placeholder="Father Name">
+    <button id="button" >Submit</button>
+    <input type="number" id="search" placeholder="Search By roll Number">
+    <button id="searchButton" >search</button>
+    <div id="studentsList">
+      
+    </div>
+  <script src="app.js"></script>
+</body>
+</html>
